@@ -1,21 +1,23 @@
+// TodoItem.js
+
 import React from "react";
 import { useDispatch } from "react-redux";
-import { toggleTodo } from "../redux/ducks/todos";
+import { toggleTodo } from "../store/actions/todoActions";
 
-function TodoItem({ todo }) {
+const TodoItem = ({ todo }) => {
   const dispatch = useDispatch();
 
-  const handleToggle = () => {
+  const onToggleHandler = () => {
     dispatch(toggleTodo(todo.id));
   };
 
   return (
     <div>
       <h3>{todo.title}</h3>
-      <p>{todo.content}</p>
-      <button onClick={handleToggle}>{todo.completed ? "취소" : "완료"}</button>
+      <p>{todo.body}</p>
+      <button onClick={onToggleHandler}>{todo.isDone ? "취소" : "완료"}</button>
     </div>
   );
-}
+};
 
 export default TodoItem;

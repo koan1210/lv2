@@ -1,36 +1,49 @@
+// TodoForm.js
+
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { addTodo } from "../redux/ducks/todos";
+import { addTodo } from "../store/actions/todoActions";
 
-function TodoForm() {
-  const dispatch = useDispatch();
+const TodoForm = () => {
   const [title, setTitle] = useState("");
-  const [content, setContent] = useState("");
+  const [body, setBody] = useState("");
 
-  const handleSubmit = (e) => {
+  const dispatch = useDispatch();
+
+  const onSubmitHandler = (e) => {
     e.preventDefault();
-    dispatch(addTodo(title, content));
+    if (title.trim() === "" || body.trim() === "") {
+      return;
+    }
+    dispatch(
+      addTodo({
+        id: new Date().getTime(),
+        title,
+        body,
+        isDone: false,
+      })
+    );
     setTitle("");
-    setContent("");
+    setBody("");
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={onSubmitHandler}>
       <input
         type="text"
-        value={title}
         placeholder="제목"
+        value={title}
         onChange={(e) => setTitle(e.target.value)}
       />
       <input
         type="text"
-        value={content}
         placeholder="내용"
-        onChange={(e) => setContent(e.target.value)}
+        value={body}
+        onChange={(e) => setBody(e.target.value)}
       />
-      <button type="submit">추가</button>
+      <button type="submit">추가하기</button>
     </form>
   );
-}
+};
 
 export default TodoForm;

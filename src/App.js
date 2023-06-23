@@ -1,16 +1,23 @@
-import React from "react";
-import TodoList from "./components/TodoList";
-import TodoDetail from "./components/TodoDetail";
-import "./App.css";
+// App.js
 
-function App() {
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { Provider } from "react-redux";
+import MainPage from "./pages/MainPage";
+import DetailPage from "./pages/DetailPage";
+import store from "./store/store";
+
+const App = () => {
   return (
-    <div className="App">
-      <h1>Todos</h1>
-      <TodoList />
-      <TodoDetail />
-    </div>
+    <Provider store={store}>
+      <Router>
+        <Routes>
+          <Route path="/" element={<MainPage />} />
+          <Route path="/detail/:id" element={<DetailPage />} />
+        </Routes>
+      </Router>
+    </Provider>
   );
-}
+};
 
 export default App;
