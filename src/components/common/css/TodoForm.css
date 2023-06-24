@@ -1,0 +1,27 @@
+.todo-form {
+  margin-top: 20px;
+  background-color: #f0f0f0;
+  padding: 20px;
+  display: flex;
+  justify-content: space-around;
+  background-color: #f8f8f8; /* 백그라운드 색상 추가 */
+  border-radius: 8px; /* 카드 모양을 위해 border-radius 추가 */
+  border: 2px solid lightgray; /* 카드 선 색상 추가 */
+}
+
+.todo-form input,
+.todo-form button {
+  margin-right: 10px;
+}
+
+.todo-form button {
+  background-color: darkcyan;
+  border-radius: 4px;
+  padding: 6px 12px;
+  color: white;
+  transition: background-color 0.3s;
+}
+
+.todo-form button:hover {
+  background-color: aqua;
+}

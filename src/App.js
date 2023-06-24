@@ -4,6 +4,7 @@ import { Provider } from "react-redux";
 import MainPage from "./pages/MainPage";
 import DetailPage from "./pages/DetailPage";
 import store from "./store/store";
+import "./App.css";
 
 const App = () => {
   return (

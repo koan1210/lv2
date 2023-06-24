@@ -1,8 +1,7 @@
-// TodoForm.js
-
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addTodo } from "../store/actions/todoActions";
+import "./common/css/TodoForm.css";
 
 const TodoForm = () => {
   const [title, setTitle] = useState("");
@@ -28,7 +27,7 @@ const TodoForm = () => {
   };
 
   return (
-    <form onSubmit={onSubmitHandler}>
+    <form onSubmit={onSubmitHandler} className="todo-form">
       <input
         type="text"
         placeholder="제목"

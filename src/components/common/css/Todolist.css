@@ -1,0 +1,61 @@
+.todo-list {
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  border: 2px solid lightgray;
+}
+
+.todo-list h2 {
+  margin-top: 0;
+}
+
+.working-list {
+  background-color: lightblue;
+  border-color: dodgerblue;
+}
+
+.done-list {
+  background-color: lightgreen;
+  border-color: limegreen;
+}
+
+.working-list .todo {
+  margin-bottom: 10px;
+  box-shadow: 0 0 0 2px dodgerblue;
+}
+
+.done-list .todo {
+  margin-bottom: 10px;
+  box-shadow: 0 0 0 2px limegreen;
+}
+
+.working-list .todo h3 {
+  margin-top: 0;
+}
+
+.done-list .todo h3 {
+  margin-top: 0;
+}
+
+.working-list .todo p {
+  margin-bottom: 10px;
+}
+
+.done-list .todo p {
+  margin-bottom: 10px;
+}
+
+.todo-list .todo button {
+  margin-right: 8px;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.todo-list .todo.green-border {
+  box-shadow: 0 0 0 2px mediumaquamarine;
+}
+
+.todo-list .todo.red-border {
+  box-shadow: 0 0 0 2px red;
+}
