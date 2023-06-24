@@ -1,6 +1,6 @@
 // todoReducer.js
 
-import { ADD_TODO, TOGGLE_TODO } from "../types";
+import { ADD_TODO, TOGGLE_TODO, DELETE_TODO } from "../types";
 
 const initialState = {
   todos: [],
@@ -22,6 +22,12 @@ const todoReducer = (state = initialState, action) => {
       };
     default:
       return state;
+
+    case DELETE_TODO:
+      return {
+        ...state,
+        todos: state.todos.filter((todo) => todo.id !== action.payload),
+      };
   }
 };
 

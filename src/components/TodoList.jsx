@@ -12,11 +12,11 @@ const TodoList = () => {
 
   return (
     <div>
-      <h2>Working</h2>
+      <h2>Working.... 🔥</h2>
       {workingTodos.map((todo) => (
         <TodoItem key={todo.id} todo={todo} />
       ))}
-      <h2>Done</h2>
+      <h2>Done...! 🎉</h2>
       {doneTodos.map((todo) => (
         <TodoItem key={todo.id} todo={todo} />
       ))}
